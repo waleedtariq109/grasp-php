@@ -1,17 +1,42 @@
 <?php
 
-$number1 = 88;
-$number2 = 12;
-$number3 = '10';
+$output = null;
 
-// Implicit Conversion
-$result = $number1 + $number2; // int
-$result = $number2 + $number3; // string to int conversion
-$result = $number3 + $number3; // string to int conversion
-$result = $number1 . $number2; // int to string
 
-// Explicit Conversion
-$result = (string) $number1;
-$result = (int) $number3;
+$num1 = 20;
+$num2 = 10;
 
-var_dump($result);
+$output = "$num1 + $num2 = " . $num1 + $num2;
+$output = "$num1 - $num2 = " . $num1 - $num2;
+$output = "$num1 * $num2 = " . $num1 * $num2;
+$output = "$num1 / $num2 = " . $num1 / $num2;
+$output = "$num1 % $num2 = " . $num1 % $num2;
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Learn PHP From Scratch</title>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-semibold">PHP From Scratch</h1>
+        </div>
+    </header>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl">
+                <?= $output ?>
+            </h2>
+        </div>
+    </div>
+</body>
+
+</html>
