@@ -2,54 +2,37 @@
 
 $output = null;
 
-/*
- - `Y` - The year
- - `m` - The month
- - `d` - The day
- - `D` - The day of the week short name
- - `l` - The full day of the week name
- - `h` - The hour
- - `i` - The minute
- - `Y` - The second
- - `a` - AM/PM
-*/
+$string = "Hello World";
 
-// Get Year
-$output = date('Y');
+// strlen
+$output = strlen($string);
 
-// Get Date with timestamp
-$output = date('Y', 936345600);
+// str_word_count
+$output = str_word_count($string);
 
-// Get timestamp from strtotime
-$output = date('Y', strtotime('1999-06-12'));
+// strpos
+$output = strpos($string, 'r');
 
-// Get month
-$output = date('m');
+// Get specific Character
+$output = $string[4];
 
-// Get day
-$output = date('D');
-$output = date('l');
+// substr
+$output = substr($string, 6, 5);
 
-// Get full Date
+// str_replace
+$output = str_replace('World', 'Waleed', $string);
 
-$output = date('d-m-Y');
+// strtolower
+$output = strtolower($string);
 
-// Get Hour
-$output = date('h');
+// strtoupper
+$output = strtoupper($string);
 
-// Get minutes
-$output = date('i');
+// ucwords
+$output = ucwords($string);
 
-// Get second
-$output = date('s');
-
-// Get AM/PM
-$output = date('a');
-
-// Get date with with time
-
-$output = date('d-m-Y h:i:s a');
-
+// trim
+$output = trim('    Hello World     ');
 ?>
 
 <!DOCTYPE html>
