@@ -2,16 +2,37 @@
 
 $output = null;
 
+$string = "Hello World";
 
-$num1 = 20;
-$num2 = 10;
+// strlen
+$output = strlen($string);
 
-$output = "$num1 + $num2 = " . $num1 + $num2;
-$output = "$num1 - $num2 = " . $num1 - $num2;
-$output = "$num1 * $num2 = " . $num1 * $num2;
-$output = "$num1 / $num2 = " . $num1 / $num2;
-$output = "$num1 % $num2 = " . $num1 % $num2;
+// str_word_count
+$output = str_word_count($string);
 
+// strpos
+$output = strpos($string, 'r');
+
+// Get specific Character
+$output = $string[4];
+
+// substr
+$output = substr($string, 6, 5);
+
+// str_replace
+$output = str_replace('World', 'Waleed', $string);
+
+// strtolower
+$output = strtolower($string);
+
+// strtoupper
+$output = strtoupper($string);
+
+// ucwords
+$output = ucwords($string);
+
+// trim
+$output = trim('    Hello World     ');
 ?>
 
 <!DOCTYPE html>
