@@ -1,46 +1,20 @@
 <?php
 $output = null;
 
-$fruits = [
-    ['Apple', 'Red'],
-    ['Orange', 'Orange'],
-    ['Bananna', 'Yellow']
-];
-
-$output = $fruits[0][0];
-
-$fruits[] = ['Watermelon', 'Green'];
-array_push($fruits, ['Grapes', 'Green']);
-
-$users = [
-    [
-        'name' => 'Waleed Tariq',
-        'email' => 'waleed@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-    [
-        'name' => 'Esha Tariq',
-        'email' => 'esha@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-    [
-        'name' => 'Dua Tariq',
-        'email' => 'dua@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-];
-
-$users[] = [
-    'name' => 'Kainat Tariq',
-    'email' => 'kainat@gmail.com',
+$user = [
+    'name' => 'Waleed Tariq',
+    'email' => 'waleed.tariq@sukuktech.com',
     'password' => '123456',
     'hobbies' => ['Book Reading', 'Games']
 ];
 
-$output = $users[0]['name'];
+$output = $user['name'];
+$output = $user['hobbies'][0];
+
+$user['address'] = 'Lahore, Punjab';
+
+unset($user['address'])
+
 
 ?>
 
@@ -66,11 +40,11 @@ $output = $users[0]['name'];
                 <?= $output ?>
             </p>
             <h2 class="text-xl font-semibold">
-                Fruits Array:
+                User Array:
             </h2>
             <p>
             <pre>
-                    <?php print_r($users); ?>
+                    <?php print_r($user); ?>
                 </pre>
             </p>
         </div>
