@@ -1,59 +1,20 @@
 <?php
 $output = null;
 
-$ids = [10, 2, 33, 14, 15];
-$users = ['user2', 'user1', 'user3'];
+$user = [
+    'name' => 'Waleed Tariq',
+    'email' => 'waleed.tariq@sukuktech.com',
+    'password' => '123456',
+    'hobbies' => ['Book Reading', 'Games']
+];
 
-// Count array element
-$output = count($ids);
+$output = $user['name'];
+$output = $user['hobbies'][0];
 
-// Sort Array
-sort($ids);
-sort($users);
+$user['address'] = 'Lahore, Punjab';
 
-// Reverse sort array `rsort`
-rsort($ids);
-rsort($users);
+unset($user['address'])
 
-// array_push
-array_push($ids, 100);
-array_push($users, 'users4');
-
-// array_pop
-array_pop($ids);
-array_pop($users);
-
-// array_shift
-array_shift($ids);
-array_shift($users);
-
-// array_unshift
-array_unshift($ids, 100);
-array_unshift($users, 'user3');
-
-// array_slice
-$ids2 = array_slice($ids, 1, 3);
-// var_dump($ids2)
-
-// array_splice
-array_splice($ids, 1, 1, 'New ID');
-
-// array_sum
-$output = "The sum is: " . array_sum($ids);
-
-// array_search
-$output = "User 2 is at index: " . array_search('user2', $users);
-
-// in_array
-$output = "User 2 exist: " . in_array('user2', $users);
-
-// explode
-$tags = 'tech,code,programming';
-$tagsArr = explode(',', $tags);
-// var_dump($tagsArr);
-
-// Implode
-$output = implode(',', $users);
 
 ?>
 
@@ -79,19 +40,11 @@ $output = implode(',', $users);
                 <?= $output ?>
             </p>
             <h2 class="text-xl font-semibold">
-                IDs Array:
+                User Array:
             </h2>
             <p>
             <pre>
-                    <?php print_r($ids); ?>
-                </pre>
-            </p>
-            <h2 class="text-xl font-semibold">
-                Users Array:
-            </h2>
-            <p>
-            <pre>
-                    <?php print_r($users); ?>
+                    <?php print_r($user); ?>
                 </pre>
             </p>
         </div>
