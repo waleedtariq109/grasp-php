@@ -1,80 +1,25 @@
 <?php
-$output = null;
 
-$fruits = [
-    ['Apple', 'Red'],
-    ['Orange', 'Orange'],
-    ['Bananna', 'Yellow']
-];
+// Sum of array
 
-$output = $fruits[0][0];
+echo "<h3>Sum of an array</h3>";
 
-$fruits[] = ['Watermelon', 'Green'];
-array_push($fruits, ['Grapes', 'Green']);
+$numberArray = [1, 2, 3, 4, 5];
 
-$users = [
-    [
-        'name' => 'Waleed Tariq',
-        'email' => 'waleed@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-    [
-        'name' => 'Esha Tariq',
-        'email' => 'esha@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-    [
-        'name' => 'Dua Tariq',
-        'email' => 'dua@gmail.com',
-        'password' => '123456',
-        'hobbies' => ['Book Reading', 'Games']
-    ],
-];
+$sum = array_sum($numberArray);
+$count = count($numberArray);
 
-$users[] = [
-    'name' => 'Kainat Tariq',
-    'email' => 'kainat@gmail.com',
-    'password' => '123456',
-    'hobbies' => ['Book Reading', 'Games']
-];
+echo "The sum of the $count number is: $sum";
 
-$output = $users[0]['name'];
+// Colors Array
+$colors = ['red', 'blue', 'green', 'yellow'];
 
-?>
+$colors = array_reverse($colors);
+$colors = array_merge($colors, ['purple', 'orange']);
 
-<!DOCTYPE html>
-<html lang="en">
+array_splice($colors, 1, 1, 'Pink');
+array_pop($colors);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Learn PHP From Scratch</title>
-</head>
-
-<body class="bg-gray-100">
-    <header class="bg-blue-500 text-white p-4">
-        <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold">PHP From Scratch</h1>
-        </div>
-    </header>
-    <div class="container mx-auto p-4 mt-4">
-        <div class="bg-white rounded-lg shadow-md p-6">
-            <p class="text-xl">
-                <?= $output ?>
-            </p>
-            <h2 class="text-xl font-semibold">
-                Fruits Array:
-            </h2>
-            <p>
-            <pre>
-                    <?php print_r($users); ?>
-                </pre>
-            </p>
-        </div>
-    </div>
-</body>
-
-</html>
+echo '<pre>';
+var_dump($colors);
+echo '</pre>';
