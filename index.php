@@ -54,6 +54,26 @@ function highlightTag($tagsArr, $searchString)
     return str_replace($searchString, "<span class='bg-yellow-300'>$searchString</span>", $tagStr);
 }
 
+function getSalaryAverage($jobListing)
+{
+    $totalSalary = 0;
+    $count = count($jobListing);
+    foreach ($jobListing as $job) {
+        $totalSalary += $job['salary'];
+    }
+    $averageSalary = ($count > 0) ? $totalSalary / $count : 0;
+    return formatSalary($averageSalary);
+}
+
+function getSalaryAverage2($jobListing)
+{
+    $salaries = array_column($jobListing, 'salary');
+    $count = count($salaries);
+    $totalSalary = array_sum($salaries);
+    $averageSalary = ($count > 0) ? $totalSalary / $count : 0;
+    return formatSalary($averageSalary);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -67,8 +87,13 @@ function highlightTag($tagsArr, $searchString)
 </head>
 
 <body class="bg-gray-100 p-6">
-    <div class="max-w-md mx-auto">
+    <div class="max-w-xl mx-auto">
         <h1 class="text-2xl font-bold mb-6">Job Listings</h1>
+        <div class="bg-green-100 rounded-lg shadow-md p-6 my-6">
+            <h2 class="text-2xl font-semibold mb-4">
+                Average Salary: <?= getSalaryAverage2($listings) ?>
+            </h2>
+        </div>
         <?php foreach ($listings as $index => $job) : ?>
             <div class="mb-4 p-4 shadow-md rounded-lg <?= $index % 2 === 0 ? 'bg-blue-100' : 'bg-white' ?>">
                 <h2 class="text-xl font-semibold"><?= $job['title'] ?></h2>
